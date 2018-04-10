@@ -1,0 +1,6 @@
+<html>
+<body>		
+	<h1>laravel quick start</h1>
+	<?php echo $__env->yieldContent('content'); ?>;
+</body>
+</html>

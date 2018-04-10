@@ -1,0 +1,31 @@
+<div class="pagination">
+    <div>
+        <?php foreach($users as $user): ?>
+            <tr>
+                <th>
+                    <?php echo e($user->id); ?>
+
+                </th>
+                <th>
+                    <?php echo e($user->username); ?>
+
+                </th>
+            </tr>
+        <?php endforeach; ?>
+    </div>
+    <ul>
+        <li class="previous <?php echo e(($users->currentPage() == 1) ? ' disabled' : ''); ?>">
+            <a href="<?php echo e($users->url(1)); ?>"><i class="chevron left icon">first</i></a>
+        </li>
+        <?php for($i = 1; $i <= $users->lastPage(); $i++): ?>
+            <li class="<?php echo e(($users->currentPage() == $i) ? ' active' : ''); ?>">
+                <a href="<?php echo e($users->url($i)); ?>"><?php echo e($i); ?></a>
+            </li>
+        <?php endfor; ?>
+        <li class="next <?php echo e(($users->currentPage() == $users->lastPage()) ? ' disabled' : ''); ?>">
+            <a href="<?php echo e($users->url($users->currentPage()+1)); ?>">
+                <i class="chevron right icon">last</i>
+            </a>
+        </li>
+    </ul>
+</div>

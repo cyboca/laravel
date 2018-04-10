@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>测试中间件</title>
+</head>
+<body>
+<form action="addUser" method="post">
+    <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>" />
+    帐号:<input  type="text" name="name" value="<?php echo e(old('name')); ?>"/><br>
+    年龄:<input  type="text" name="age" value="<?php echo e(old('age')); ?>"/>
+    <input type="submit" value="提交" />
+</form>
+</body>
+</html>
